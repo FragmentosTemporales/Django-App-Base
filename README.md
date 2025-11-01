@@ -24,6 +24,10 @@
 3.- Crear un modulo
 > py manage.py startapp MODULO
 
+### VARIABLES DE ENTORNO
+
+> Las variables de entorno en este proyecto se gestionan con pydantic_settings, sigue el ejemplo de "example.env"
+
 ### CREACION DE MIGRACIONES
 
 1.- Para crear una migración debemos ejecutar el siguiente comando:
