@@ -23,20 +23,5 @@ class Producto(BaseModelo):
     puntaje = models.FloatField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
-
-class Marca(BaseModelo):
-    nombre = models.CharField(max_length=100)
-
     def __str__(self):
         return super().__str__()
-
-class ModeloEjemplo(models.Model):
-    nombre = models.CharField(max_length=100)
-
-    def __str__(self):
-        return super().__str__()
-
-
-
-    def __str__(self):
-        return self.nombre
