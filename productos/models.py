@@ -20,7 +20,7 @@ class Producto(BaseModelo):
     nombre = models.CharField(max_length=100)
     stock = models.IntegerField()
     puntaje = models.FloatField()
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='productos')
 
     def __str__(self):
         return super().__str__()
