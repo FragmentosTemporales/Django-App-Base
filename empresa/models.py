@@ -1,15 +1,8 @@
 from django.db import models
-from django.utils import timezone
+from app.models import BaseModel
 
 
-class BaseModelo(models.Model):
-    creado = models.DateTimeField(default=(timezone.now() - timezone.timedelta(hours=3)))
-
-    class Meta:
-        abstract = True
-
-
-class Empresa(BaseModelo):
+class Empresa(BaseModel):
     nombre = models.CharField(max_length=255)
     run = models.CharField(max_length=20, unique=True)
     direccion = models.CharField(max_length=255)
