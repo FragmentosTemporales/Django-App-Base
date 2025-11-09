@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/django.svg' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django App</title>
+    <script type="module" crossorigin src="{% static 'javascript/index_js.js' %}"></script>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div id="root"></div>
+</body>
+</html>
+{% endblock content %}
