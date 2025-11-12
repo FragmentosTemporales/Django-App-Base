@@ -73,3 +73,17 @@ DATABASES = {
 
 1.- Para ejecutar el servicio en modo prueba:
 > py manage.py runserver
+
+### TESTEO
+
+1.- Para ejecutar todos los testeos:
+
+``` bash
+python manage.py test
+```
+
+2.- Para testear un modulo en particular
+
+``` bash
+python manage.py test productos
+```

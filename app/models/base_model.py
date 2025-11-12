@@ -3,7 +3,7 @@ from django.utils import timezone
 
 
 class BaseModel(models.Model):
-    creado = models.DateTimeField(default=(timezone.now() - timezone.timedelta(hours=3)))
+    creado = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         abstract = True

@@ -1,5 +1,6 @@
 from django.db import models
 from app.models import BaseModel
+from empresa.models import Empresa
 
 
 class Categoria(BaseModel):
@@ -17,3 +18,11 @@ class Producto(BaseModel):
 
     def __str__(self):
         return super().__str__()
+
+
+class EmpresaCategoriaProducto(BaseModel):
+    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE, related_name='categoria_productos')
+    categoria_producto = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='empresa_categorias')
+
+    def __str__(self):
+        return f"{self.empresa.nombre} - {self.categoria_producto.nombre}"
