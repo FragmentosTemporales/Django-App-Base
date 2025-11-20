@@ -52,16 +52,19 @@ python -m venv venv
 ### 3. Activar el entorno virtual
 
 **Windows (Git Bash):**
+
 ```bash
 source venv/Scripts/activate
 ```
 
 **Windows (CMD):**
+
 ```cmd
 venv\Scripts\activate.bat
 ```
 
 **Linux/Mac:**
+
 ```bash
 source venv/bin/activate
 ```
@@ -100,11 +103,13 @@ DB_PORT=5432
 #### Opción 1: PostgreSQL (Recomendado para producción)
 
 1. Crear la base de datos:
+
 ```sql
 CREATE DATABASE django_db;
 ```
 
-2. Configurar en `settings.py`:
+1. Configurar en `settings.py`:
+
 ```python
 DATABASES = {
     "default": {
@@ -132,11 +137,13 @@ DATABASES = {
 ### Migraciones
 
 1. Crear archivos de migración:
+  
 ```bash
 python manage.py makemigrations
 ```
 
-2. Aplicar migraciones a la base de datos:
+1. Aplicar migraciones a la base de datos:
+
 ```bash
 python manage.py migrate
 ```
@@ -153,7 +160,7 @@ Sigue las instrucciones en pantalla para crear tu usuario administrador.
 
 ## 📁 Estructura del Proyecto
 
-```
+```bash
 Django-App-Base/
 ├── app/                      # Configuración principal del proyecto
 │   ├── models/              # Modelos base compartidos
@@ -227,6 +234,7 @@ python manage.py test productos.tests.ProductoModelTest.test_producto_stock_posi
 ### Cobertura de Tests
 
 El proyecto cuenta con **26 tests unitarios** que cubren:
+
 - ✅ Validación de modelos
 - ✅ Relaciones entre entidades
 - ✅ Restricciones de base de datos
@@ -312,6 +320,7 @@ mutation {
 ## 📊 Modelos de Datos
 
 ### Empresa
+
 - `nombre`: CharField (max_length=255)
 - `run`: CharField (max_length=20, unique=True)
 - `direccion`: CharField (max_length=255)
@@ -319,10 +328,12 @@ mutation {
 - `creado`: DateTimeField (auto_now_add=True)
 
 ### Categoría
+
 - `nombre`: CharField (max_length=255)
 - `creado`: DateTimeField (auto_now_add=True)
 
 ### Producto
+
 - `nombre`: CharField (max_length=100)
 - `stock`: IntegerField
 - `puntaje`: FloatField
@@ -330,6 +341,7 @@ mutation {
 - `creado`: DateTimeField (auto_now_add=True)
 
 ### EmpresaCategoriaProducto
+
 - `empresa`: ForeignKey → Empresa
 - `categoria_producto`: ForeignKey → Categoría
 - `creado`: DateTimeField (auto_now_add=True)

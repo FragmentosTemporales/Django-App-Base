@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'empresa.apps.EmpresaConfig',
     'productos.apps.ProductosConfig',
+    'mensajes.apps.MensajesConfig',
     'graphene_django'
 ]
 
