@@ -21,7 +21,8 @@ INSTALLED_APPS = [
     'empresa.apps.EmpresaConfig',
     'productos.apps.ProductosConfig',
     'mensajes.apps.MensajesConfig',
-    'graphene_django'
+    'graphene_django',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -108,4 +109,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GRAPHENE = {
     'SCHEMA': 'app.schema.schema'
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
